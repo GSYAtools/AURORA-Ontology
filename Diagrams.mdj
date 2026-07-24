@@ -3339,7 +3339,7 @@
 											"top": 574,
 											"width": 362.68310546875,
 											"height": 13,
-											"text": "+hasSustainabilityRating",
+											"text": "+hasSustainabilityLabel: SustainabilityLabel",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3377,7 +3377,7 @@
 											"top": 604,
 											"width": 362.68310546875,
 											"height": 13,
-											"text": "+hasManufactureSustainabilityLabel: DeviceSustainability[0..1]",
+											"text": "+hasManufactureSustainabilityLabel: SustainabilityLabel[0..1]",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3396,7 +3396,7 @@
 											"top": 619,
 											"width": 362.68310546875,
 											"height": 13,
-											"text": "+hasPackagingSustainabilityLabel: DeviceSustainability[0..1]",
+											"text": "+hasPackagingSustainabilityLabel: SustainabilityLabel[0..1]",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3415,7 +3415,7 @@
 											"top": 634,
 											"width": 362.68310546875,
 											"height": 13,
-											"text": "+hasTransportSustainabilityLabel: DeviceSustainability[0..1]",
+											"text": "+hasTransportSustainabilityLabel: SustainabilityLabel[0..1]",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3434,7 +3434,7 @@
 											"top": 649,
 											"width": 362.68310546875,
 											"height": 13,
-											"text": "+hasUsageSustainabilityLabel: DeviceSustainability[0..1]",
+											"text": "+hasUsageSustainabilityLabel: SustainabilityLabel[0..1]",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3453,7 +3453,7 @@
 											"top": 664,
 											"width": 362.68310546875,
 											"height": 13,
-											"text": "+hasSparePartsSustainabilityLabel: DeviceSustainability[0..1]",
+											"text": "+hasSparePartsSustainabilityLabel: SustainabilityLabel[0..1]",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3472,7 +3472,7 @@
 											"top": 679,
 											"width": 362.68310546875,
 											"height": 13,
-											"text": "+hasEndOfLifeSustainabilityLabel: DeviceSustainability[0..1]",
+											"text": "+hasEndOfLifeSustainabilityLabel: SustainabilityLabel[0..1]",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3691,7 +3691,7 @@
 											"top": 574,
 											"width": 356.93212890625,
 											"height": 13,
-											"text": "+hasSustainabilityRating",
+											"text": "+hasSustainabilityLabel: SustainabilityLabel",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3710,7 +3710,7 @@
 											"top": 589,
 											"width": 356.93212890625,
 											"height": 13,
-											"text": "+hasAdoptionSustainabilityLabel[0..1]",
+											"text": "+hasAdoptionSustainabilityLabel: SustainabilityLabel[0..1]",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3729,7 +3729,7 @@
 											"top": 604,
 											"width": 356.93212890625,
 											"height": 13,
-											"text": "+hasEfficiencySustainabilityLabel[0..1]",
+											"text": "+hasEfficiencySustainabilityLabel: SustainabilityLabel[0..1]",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3748,7 +3748,7 @@
 											"top": 619,
 											"width": 356.93212890625,
 											"height": 13,
-											"text": "+hasMaintenanceSustainabilityLabel[0..1]",
+											"text": "+hasMaintenanceSustainabilityLabel: SustainabilityLabel[0..1]",
 											"horizontalAlignment": 0
 										}
 									],
@@ -6221,16 +6221,16 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1056,
+									"left": 1047,
 									"top": 655,
-									"width": 152.10888671875,
+									"width": 218.5751953125,
 									"height": 13,
-									"alpha": 1.305464237880205,
-									"distance": 95.33624704172071,
+									"alpha": 1.3684746834949553,
+									"distance": 119.4361754243663,
 									"hostEdge": {
 										"$ref": "AAAAAAGZ4txhkNOy5/g="
 									},
-									"text": "+hasSustainabilityLabel"
+									"text": "+hasSecurityMechanismSustainability"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -6847,7 +6847,7 @@
 									"hostEdge": {
 										"$ref": "AAAAAAGZ4txyHuCJIM8="
 									},
-									"text": "1..*"
+									"text": "0..*"
 								},
 								{
 									"_type": "UMLQualifierCompartmentView",
@@ -10291,16 +10291,16 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1559,
+									"left": 1555,
 									"top": 720,
-									"width": 136.95703125,
+									"width": 144.88525390625,
 									"height": 13,
 									"alpha": -2.1514878357469285,
 									"distance": 65.79513659838392,
 									"hostEdge": {
 										"$ref": "AAAAAAGZ4vSGlEsFj1E="
 									},
-									"text": "+hasSustainabilityLabel"
+									"text": "+hasDeviceSustainability"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -13876,17 +13876,18 @@
 									"model": {
 										"$ref": "AAAAAAGfjmDz/XQ89VM="
 									},
-									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1775,
-									"top": 936,
+									"left": 1687,
+									"top": 952,
+									"width": 61.064453125,
 									"height": 13,
-									"alpha": -0.5235987755982988,
-									"distance": 30,
+									"alpha": 0.31197179984710655,
+									"distance": 75.53806987208503,
 									"hostEdge": {
 										"$ref": "AAAAAAGfjmDz/XQ+XW0="
-									}
+									},
+									"text": "+hasAsset"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -13918,17 +13919,18 @@
 									"model": {
 										"$ref": "AAAAAAGfjmDz/XQ89VM="
 									},
-									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1768,
+									"left": 1765,
 									"top": 963,
+									"width": 7.22998046875,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
 									"hostEdge": {
 										"$ref": "AAAAAAGfjmDz/XQ+XW0="
-									}
+									},
+									"text": "1"
 								},
 								{
 									"_type": "UMLQualifierCompartmentView",
@@ -17426,7 +17428,7 @@
 								"_parent": {
 									"$ref": "AAAAAAGZ4txhkNOuqqo="
 								},
-								"name": "hasSustainabilityLabel",
+								"name": "hasSecurityMechanismSustainability",
 								"reference": {
 									"$ref": "AAAAAAGZ4tf78sLHPEA="
 								},
@@ -17461,7 +17463,7 @@
 									"$ref": "AAAAAAGZ4tfIR8JzXxs="
 								},
 								"navigable": "navigable",
-								"multiplicity": "1..*"
+								"multiplicity": "0..*"
 							}
 						},
 						{
@@ -17994,7 +17996,10 @@
 							"_parent": {
 								"$ref": "AAAAAAGZ4tfdAcKdqTs="
 							},
-							"name": "hasSustainabilityRating"
+							"name": "hasSustainabilityLabel",
+							"type": {
+								"$ref": "AAAAAAGfjrd1qXXGiWc="
+							}
 						},
 						{
 							"_type": "UMLAttribute",
@@ -18014,7 +18019,7 @@
 							},
 							"name": "hasManufactureSustainabilityLabel",
 							"type": {
-								"$ref": "AAAAAAGZ4tfdAcKdqTs="
+								"$ref": "AAAAAAGfjrd1qXXGiWc="
 							},
 							"multiplicity": "0..1"
 						},
@@ -18026,7 +18031,7 @@
 							},
 							"name": "hasPackagingSustainabilityLabel",
 							"type": {
-								"$ref": "AAAAAAGZ4tfdAcKdqTs="
+								"$ref": "AAAAAAGfjrd1qXXGiWc="
 							},
 							"multiplicity": "0..1"
 						},
@@ -18038,7 +18043,7 @@
 							},
 							"name": "hasTransportSustainabilityLabel",
 							"type": {
-								"$ref": "AAAAAAGZ4tfdAcKdqTs="
+								"$ref": "AAAAAAGfjrd1qXXGiWc="
 							},
 							"multiplicity": "0..1"
 						},
@@ -18050,7 +18055,7 @@
 							},
 							"name": "hasUsageSustainabilityLabel",
 							"type": {
-								"$ref": "AAAAAAGZ4tfdAcKdqTs="
+								"$ref": "AAAAAAGfjrd1qXXGiWc="
 							},
 							"multiplicity": "0..1"
 						},
@@ -18062,7 +18067,7 @@
 							},
 							"name": "hasSparePartsSustainabilityLabel",
 							"type": {
-								"$ref": "AAAAAAGZ4tfdAcKdqTs="
+								"$ref": "AAAAAAGfjrd1qXXGiWc="
 							},
 							"multiplicity": "0..1"
 						},
@@ -18074,7 +18079,7 @@
 							},
 							"name": "hasEndOfLifeSustainabilityLabel",
 							"type": {
-								"$ref": "AAAAAAGZ4tfdAcKdqTs="
+								"$ref": "AAAAAAGfjrd1qXXGiWc="
 							},
 							"multiplicity": "0..1"
 						}
@@ -18094,7 +18099,10 @@
 							"_parent": {
 								"$ref": "AAAAAAGZ4tf78sLHPEA="
 							},
-							"name": "hasSustainabilityRating"
+							"name": "hasSustainabilityLabel",
+							"type": {
+								"$ref": "AAAAAAGfjrd1qXXGiWc="
+							}
 						},
 						{
 							"_type": "UMLAttribute",
@@ -18103,6 +18111,9 @@
 								"$ref": "AAAAAAGZ4tf78sLHPEA="
 							},
 							"name": "hasAdoptionSustainabilityLabel",
+							"type": {
+								"$ref": "AAAAAAGfjrd1qXXGiWc="
+							},
 							"multiplicity": "0..1"
 						},
 						{
@@ -18112,6 +18123,9 @@
 								"$ref": "AAAAAAGZ4tf78sLHPEA="
 							},
 							"name": "hasEfficiencySustainabilityLabel",
+							"type": {
+								"$ref": "AAAAAAGfjrd1qXXGiWc="
+							},
 							"multiplicity": "0..1"
 						},
 						{
@@ -18121,6 +18135,9 @@
 								"$ref": "AAAAAAGZ4tf78sLHPEA="
 							},
 							"name": "hasMaintenanceSustainabilityLabel",
+							"type": {
+								"$ref": "AAAAAAGfjrd1qXXGiWc="
+							},
 							"multiplicity": "0..1"
 						}
 					]
@@ -18410,7 +18427,7 @@
 								"_parent": {
 									"$ref": "AAAAAAGZ4vSGlEsBqOE="
 								},
-								"name": "hasSustainabilityLabel",
+								"name": "hasDeviceSustainability",
 								"reference": {
 									"$ref": "AAAAAAGZ4tfdAcKdqTs="
 								},
@@ -18701,10 +18718,12 @@
 								"_parent": {
 									"$ref": "AAAAAAGfjmDz/XQ6LQQ="
 								},
+								"name": "hasAsset",
 								"reference": {
 									"$ref": "AAAAAAGZ4tYvg8BR7E8="
 								},
-								"navigable": "navigable"
+								"navigable": "navigable",
+								"multiplicity": "1"
 							}
 						},
 						{

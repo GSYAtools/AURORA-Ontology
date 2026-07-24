@@ -1,12 +1,42 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/lhc/ontologies/2023/3/untitled-ontology-34/"
-     xml:base="http://www.semanticweb.org/lhc/ontologies/2023/3/untitled-ontology-34/"
+<rdf:RDF xmlns="urn:absolute:26/6/untitled-ontology-82/"
+     xml:base="urn:absolute:26/6/untitled-ontology-82/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="https://gsya.esi.uclm.es/roma"/>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:ecosec="https://gsya.esi.uclm.es/ecosec/">
+    <owl:Ontology rdf:about="https://gsya.esi.uclm.es/aurora">
+        <owl:imports rdf:resource="https://gsya.esi.uclm.es/roma"/>
+        <rdfs:comment>EcoSec is a comprehensive sustainability ontology designed to systematically assess and label the sustainability impact of security mechanisms and devices across their lifecycle or operational scope. By assigning sustainability labels ranging from A (most sustainable) to G (least sustainable), EcoSec provides a nuanced framework for evaluating the environmental and operational sustainability of various elements. 
+For security mechanisms, EcoSec assesses key aspects such as adoption, maintenance, and efficiency to understand their sustainability footprint.
+ In the context of devices, the ontology adopts a lifecycle approach, meticulously evaluating the sustainability performance at each stage (from raw material sourcing, manufacturing, and packaging, to transport, usage, spare parts availability, and end-of-life management).</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#maxQualifiedCardinality -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#maxQualifiedCardinality"/>
     
 
 
@@ -21,6 +51,193 @@
     
 
 
+    <!-- https://gsya.esi.uclm.es/aurora#hasAlert -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/aurora#hasAlert">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/aurora#CentralAurora"/>
+                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/aurora#LocalAurora"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/aurora#Alert"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/aurora#hasEvent -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/aurora#hasEvent">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/roma#Asset"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/aurora#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/aurora#hasLocal -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/aurora#hasLocal">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/aurora#CentralAurora"/>
+                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/aurora#LocalAurora"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/aurora#LocalAurora"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/aurora#hasRisk -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/aurora#hasRisk">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/aurora#LocalAurora"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/roma#Risk"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec#hasAdoptionSustainabilityLabel -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/ecosec#hasAdoptionSustainabilityLabel">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/ecosec/SecurityMechanismSustainability"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <rdfs:comment>Associates a security mechanism with its adoption label, reflecting the extent to which the technology has been accepted and adopted within the industry. This label, ranging from A to G, indicates the mechanism&apos;s prevalence and popularity among users and developers, providing insight into its widespread or limited adoption. The adoption label is a sustainability label, categorizing the mechanism&apos;s environmental and operational sustainability in terms of its adoption.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec#hasEfficiencySustainabilityLabel -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/ecosec#hasEfficiencySustainabilityLabel">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/ecosec/SecurityMechanismSustainability"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <rdfs:comment>Links a security mechanism to its efficiency label, indicating the resource effectiveness and performance of the technology in operational environments. This label, which ranges from A to G, evaluates the mechanism&apos;s sustainability by measuring its computational efficiency, energy consumption, and the optimization of resources required for its functionality. The efficiency label is a sustainability label that underscores the environmental and economic impact of deploying and operating the security mechanism.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec#hasEndOfLifeSustainabilityLabel -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/ecosec#hasEndOfLifeSustainabilityLabel">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/ecosec/DeviceSustainability"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <rdfs:comment>Associates a device with a sustainability label for end-of-life management, focusing on recyclability, return programs, and reusability. Assesses the ease of device disassembly and material sorting, initiatives for device return to manufacturers or recycling points, and the potential for component or entire device reuse.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec#hasMaintenanceSustainabilityLabel -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/ecosec#hasMaintenanceSustainabilityLabel">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/ecosec/SecurityMechanismSustainability"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <rdfs:comment>Connects a security mechanism to its maintenance label, which quantifies the effort and resources required to keep the technology secure and up-to-date over time. This label, ranging from A to G, assesses the mechanism&apos;s sustainability in terms of ongoing support, frequency of updates needed, and overall lifecycle management. The maintenance label is a sustainability label that highlights the operational efficiency and long-term viability of the security mechanism.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec#hasManufactureSustainabilityLabel -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/ecosec#hasManufactureSustainabilityLabel">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/ecosec/DeviceSustainability"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <rdfs:comment>Links a device to a sustainability label for its manufacturing stage, considering CO2 emissions, water consumption, renewable energy usage, and waste treatment. Factors assessed include CO2 equivalent emissions, water usage efficiency, the percentage of renewable energy in manufacturing processes, and the effectiveness of production waste recycling and disposal.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec#hasPackagingSustainabilityLabel -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/ecosec#hasPackagingSustainabilityLabel">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/ecosec/DeviceSustainability"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <rdfs:comment>Connects a device to a sustainability label for packaging, focusing on material types, efficiency, and sustainability information. Evaluates the use of recyclable, biodegradable, and reusable materials, optimization of packaging design to reduce waste, and the presence of labeling with recycling and disposal guidelines.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec#hasRawMaterialSustainabilityLabel -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/ecosec#hasRawMaterialSustainabilityLabel">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/ecosec/DeviceSustainability"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <rdfs:comment>Associates a device with a sustainability label for the raw materials stage, evaluating material origin, extraction impacts, efficiency, recycled content, and compliance with hazardous substance regulations. This comprehensive assessment covers types of materials (recycled, renewable, conflict-free), environmental and social impacts of extraction, material usage efficiency, percentage of recycled materials, and adherence to standards like RoHS and REACH.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec#hasSparePartsSustainabilityLabel -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/ecosec#hasSparePartsSustainabilityLabel">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/ecosec/DeviceSustainability"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <rdfs:comment>Connects a device to a sustainability label for spare parts, evaluating availability, compatibility, and sustainability. Addresses ease of access to spare parts, their compatibility across different sources or models, and the environmental impact of materials and manufacturing processes for spare parts.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec#hasSustainabilityLabel -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/ecosec#hasSustainabilityLabel">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/ecosec/DeviceSustainability"/>
+                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/ecosec/SecurityMechanismSustainability"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec#hasTransportSustainabilityLabel -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/ecosec#hasTransportSustainabilityLabel">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/ecosec/DeviceSustainability"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <rdfs:comment>Associates a device with a sustainability label for transport, assessing transport mode efficiency, logistics optimization, and transport packaging. Considers the efficiency of air, sea, and land transportation, measures to reduce transportation distances and consolidate shipments, and efforts to minimize volume and weight for transport efficiency.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec#hasUsageSustainabilityLabel -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/ecosec#hasUsageSustainabilityLabel">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/ecosec/DeviceSustainability"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <rdfs:comment>Links a device to a sustainability label for usage, covering energy efficiency, durability, repairability, and software updates. Reviews energy consumption, physical resistance, estimated lifespan, ease of repair, spare parts availability, and the impact of long-term software support on functionality and efficiency.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec/isLessSustainableThan -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/ecosec/isLessSustainableThan">
+        <owl:inverseOf rdf:resource="https://gsya.esi.uclm.es/ecosec/isMoreSustainableThan"/>
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <rdfs:comment>Indicates that one sustainability label denotes a lower level of sustainability compared to another. This hierarchical relationship helps in understanding and comparing the sustainability performance across different labels.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec/isMoreSustainableThan -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/ecosec/isMoreSustainableThan">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <rdfs:comment>Indicates that one sustainability label represents a higher level of sustainability compared to another. It establishes a hierarchy among labels, facilitating comparison and decision-making based on sustainability criteria.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://gsya.esi.uclm.es/roma#hasAsset -->
 
     <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/roma#hasAsset">
@@ -31,6 +248,7 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/aurora#Alert"/>
                     <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#Asset"/>
                     <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#Risk"/>
                     <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#TypeOfAsset"/>
@@ -38,6 +256,15 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="https://gsya.esi.uclm.es/roma#Asset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/roma#hasConfiguration -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/roma#hasConfiguration">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/roma#Asset"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/roma#AssetConfiguration"/>
     </owl:ObjectProperty>
     
 
@@ -52,6 +279,7 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/aurora#Alert"/>
                     <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#ControlObjetive"/>
                     <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#Risk"/>
                 </owl:unionOf>
@@ -90,6 +318,15 @@
     <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/roma#hasDegradation">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:range rdf:resource="https://gsya.esi.uclm.es/roma#Percentage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/roma#hasDeviceSustainability -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/roma#hasDeviceSustainability">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/roma#TypeOfAsset"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/ecosec/DeviceSustainability"/>
     </owl:ObjectProperty>
     
 
@@ -134,50 +371,15 @@
 
     <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/roma#hasRiskLevel">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/roma#Percentage"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://gsya.esi.uclm.es/roma#hasSControl -->
-
-    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/roma#hasSControl">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/roma#SustainabilitySecurity"/>
-        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/roma#SControl"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://gsya.esi.uclm.es/roma#hasSLabel -->
-
-    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/roma#hasSLabel">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#SustainabilityLabel"/>
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#SustainabilitySecurity"/>
+                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#AssetConfiguration"/>
+                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#Risk"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/roma#SLabel"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://gsya.esi.uclm.es/roma#hasSProduct -->
-
-    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/roma#hasSProduct">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/roma#SustainabilityLabel"/>
-        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/roma#SProduct"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/roma#Percentage"/>
     </owl:ObjectProperty>
     
 
@@ -215,6 +417,15 @@
     
 
 
+    <!-- https://gsya.esi.uclm.es/roma#hasSecurityMechanismSustainability -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/roma#hasSecurityMechanismSustainability">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/roma#Control"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/ecosec/SecurityMechanismSustainability"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://gsya.esi.uclm.es/roma#hasSecurityProperty -->
 
     <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/roma#hasSecurityProperty">
@@ -234,30 +445,6 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/roma#Control"/>
         <rdfs:range rdf:resource="https://gsya.esi.uclm.es/roma#Subcontrol"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://gsya.esi.uclm.es/roma#hasSustainabilityLabel -->
-
-    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/roma#hasSustainabilityLabel">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/roma#TypeOfAsset"/>
-        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/roma#SustainabilityLabel"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://gsya.esi.uclm.es/roma#hasSustainabilitySecurity -->
-
-    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/roma#hasSustainabilitySecurity">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/roma#Control"/>
-        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/roma#SustainabilitySecurity"/>
     </owl:ObjectProperty>
     
 
@@ -344,6 +531,14 @@
 
     <owl:DatatypeProperty rdf:about="https://gsya.esi.uclm.es/roma#concept">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/roma#configuration -->
+
+    <owl:DatatypeProperty rdf:about="https://gsya.esi.uclm.es/roma#configuration">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -440,14 +635,196 @@
     
 
 
+    <!-- https://gsya.esi.uclm.es/aurora#Alert -->
+
+    <owl:Class rdf:about="https://gsya.esi.uclm.es/aurora#Alert">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasControl"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/roma#Control"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasAsset"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/roma#Asset"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/aurora#CentralAurora -->
+
+    <owl:Class rdf:about="https://gsya.esi.uclm.es/aurora#CentralAurora">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/aurora#hasAlert"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/aurora#Alert"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/aurora#hasLocal"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/aurora#LocalAurora"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/aurora#Event -->
+
+    <owl:Class rdf:about="https://gsya.esi.uclm.es/aurora#Event"/>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/aurora#LocalAurora -->
+
+    <owl:Class rdf:about="https://gsya.esi.uclm.es/aurora#LocalAurora">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/aurora#hasAlert"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/aurora#Alert"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/aurora#hasLocal"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/aurora#LocalAurora"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/aurora#hasRisk"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/roma#Risk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec/DeviceSustainability -->
+
+    <owl:Class rdf:about="https://gsya.esi.uclm.es/ecosec/DeviceSustainability">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasEndOfLifeSustainabilityLabel"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasManufactureSustainabilityLabel"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasPackagingSustainabilityLabel"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasRawMaterialSustainabilityLabel"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasSparePartsSustainabilityLabel"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasTransportSustainabilityLabel"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasUsageSustainabilityLabel"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec/SecurityMechanismSustainability -->
+
+    <owl:Class rdf:about="https://gsya.esi.uclm.es/ecosec/SecurityMechanismSustainability">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasAdoptionSustainabilityLabel"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasEfficiencySustainabilityLabel"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasMaintenanceSustainabilityLabel"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec/SustainabilityLabel -->
+
+    <owl:Class rdf:about="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel">
+        <rdfs:comment>Represents the sustainability performance of various entities, including devices, security mechanisms, and other products, across their lifecycle or operational practices. Labels range from A (most sustainable) to E (least sustainable), providing a clear and standardized measure of environmental impact, resource efficiency, and overall sustainability.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- https://gsya.esi.uclm.es/roma#Asset -->
 
     <owl:Class rdf:about="https://gsya.esi.uclm.es/roma#Asset">
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/aurora#hasEvent"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/aurora#Event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasAsset"/>
                 <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
                 <owl:onClass rdf:resource="https://gsya.esi.uclm.es/roma#Asset"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasConfiguration"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/roma#AssetConfiguration"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -462,6 +839,27 @@
                 <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#value"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/roma#AssetConfiguration -->
+
+    <owl:Class rdf:about="https://gsya.esi.uclm.es/roma#AssetConfiguration">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasRiskLevel"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/roma#Percentage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#configuration"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -485,14 +883,15 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasSustainabilitySecurity"/>
-                <owl:someValuesFrom rdf:resource="https://gsya.esi.uclm.es/roma#SustainabilitySecurity"/>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#mitigates"/>
+                <owl:someValuesFrom rdf:resource="https://gsya.esi.uclm.es/roma#TypeOfThreat"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#mitigates"/>
-                <owl:someValuesFrom rdf:resource="https://gsya.esi.uclm.es/roma#TypeOfThreat"/>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasSecurityMechanismSustainability"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SecurityMechanismSustainability"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -652,22 +1051,6 @@
 
     <owl:Class rdf:about="https://gsya.esi.uclm.es/roma#Risk">
         <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasThreat"/>
-                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                        <owl:onClass rdf:resource="https://gsya.esi.uclm.es/roma#Threat"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasThreat"/>
-                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                        <owl:onClass rdf:resource="https://gsya.esi.uclm.es/roma#Threat"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasDimension"/>
                 <owl:someValuesFrom rdf:resource="https://gsya.esi.uclm.es/roma#Dimension"/>
@@ -694,59 +1077,13 @@
                 <owl:onClass rdf:resource="https://gsya.esi.uclm.es/roma#Percentage"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- https://gsya.esi.uclm.es/roma#SControl -->
-
-    <owl:Class rdf:about="https://gsya.esi.uclm.es/roma#SControl">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#Adoption"/>
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#Efficiency"/>
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#Maintenance"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- https://gsya.esi.uclm.es/roma#SLabel -->
-
-    <owl:Class rdf:about="https://gsya.esi.uclm.es/roma#SLabel">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#ASustinabilityLabel"/>
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#BSustainabilityLabel"/>
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#CSustainabilityLabel"/>
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#DSustainabilityLabel"/>
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#ESustainabilityLabel"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- https://gsya.esi.uclm.es/roma#SProduct -->
-
-    <owl:Class rdf:about="https://gsya.esi.uclm.es/roma#SProduct">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#Manufacture"/>
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#Packaging"/>
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#RawMaterial"/>
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#SpareParts"/>
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#Transport"/>
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/roma#Usage"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasThreat"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/roma#Threat"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -858,44 +1195,6 @@
     
 
 
-    <!-- https://gsya.esi.uclm.es/roma#SustainabilityLabel -->
-
-    <owl:Class rdf:about="https://gsya.esi.uclm.es/roma#SustainabilityLabel">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasSLabel"/>
-                <owl:someValuesFrom rdf:resource="https://gsya.esi.uclm.es/roma#SLabel"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasSProduct"/>
-                <owl:someValuesFrom rdf:resource="https://gsya.esi.uclm.es/roma#SProduct"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- https://gsya.esi.uclm.es/roma#SustainabilitySecurity -->
-
-    <owl:Class rdf:about="https://gsya.esi.uclm.es/roma#SustainabilitySecurity">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasSControl"/>
-                <owl:someValuesFrom rdf:resource="https://gsya.esi.uclm.es/roma#SControl"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasSLabel"/>
-                <owl:someValuesFrom rdf:resource="https://gsya.esi.uclm.es/roma#SLabel"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
     <!-- https://gsya.esi.uclm.es/roma#TAD -->
 
     <owl:Class rdf:about="https://gsya.esi.uclm.es/roma#TAD">
@@ -962,15 +1261,16 @@
         <rdfs:subClassOf rdf:resource="https://gsya.esi.uclm.es/roma#FamilyOfAsset"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasSustainabilityLabel"/>
-                <owl:someValuesFrom rdf:resource="https://gsya.esi.uclm.es/roma#SustainabilityLabel"/>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasAsset"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/roma#Asset"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasAsset"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/roma#Asset"/>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasDeviceSustainability"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/DeviceSustainability"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1017,59 +1317,98 @@
     
 
 
+    <!-- https://gsya.esi.uclm.es/ecosec/ASustainabilityLabel -->
+
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/ecosec/ASustainabilityLabel">
+        <rdf:type rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <ecosec:isMoreSustainableThan rdf:resource="https://gsya.esi.uclm.es/ecosec/BSustainabilityLabel"/>
+        <rdfs:comment>Represents the highest standard of sustainability. Products or practices with this label are considered to have the lowest environmental impact and highest efficiency and sustainability in their category.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec/BSustainabilityLabel -->
+
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/ecosec/BSustainabilityLabel">
+        <rdf:type rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <ecosec:isLessSustainableThan rdf:resource="https://gsya.esi.uclm.es/ecosec/ASustainabilityLabel"/>
+        <ecosec:isMoreSustainableThan rdf:resource="https://gsya.esi.uclm.es/ecosec/CSustainabilityLabel"/>
+        <rdfs:comment>Denotes a high level of sustainability, second only to A. Products or practices labeled B are highly sustainable with minor areas for improvement compared to A.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec/CSustainabilityLabel -->
+
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/ecosec/CSustainabilityLabel">
+        <rdf:type rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <ecosec:isLessSustainableThan rdf:resource="https://gsya.esi.uclm.es/ecosec/BSustainabilityLabel"/>
+        <ecosec:isMoreSustainableThan rdf:resource="https://gsya.esi.uclm.es/ecosec/DSustainabilityLabel"/>
+        <rdfs:comment>Reflects a moderate level of sustainability. C labeled entities offer a balanced sustainability performance but with significant room for improvement to reach higher standards.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec/DSustainabilityLabel -->
+
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/ecosec/DSustainabilityLabel">
+        <rdf:type rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <ecosec:isLessSustainableThan rdf:resource="https://gsya.esi.uclm.es/ecosec/CSustainabilityLabel"/>
+        <ecosec:isMoreSustainableThan rdf:resource="https://gsya.esi.uclm.es/ecosec/ESustainabilityLabel"/>
+        <rdfs:comment>Indicates a sustainability performance that is below average, with D being more sustainable than E but less so than C, B, and A.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/ecosec/ESustainabilityLabel -->
+
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/ecosec/ESustainabilityLabel">
+        <rdf:type rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+        <ecosec:isLessSustainableThan rdf:resource="https://gsya.esi.uclm.es/ecosec/DSustainabilityLabel"/>
+        <rdfs:comment>Signifies a lower level of sustainability, indicating a need for significant improvements. Products or practices with an E label have a notable environmental impact and efficiency issues. This label suggests that while some sustainability measures may be in place, there are considerable areas for improvement to move towards a more sustainable outcome.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://gsya.esi.uclm.es/roma#ASustinabilityLabel -->
 
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#ASustinabilityLabel">
-        <rdf:type rdf:resource="https://gsya.esi.uclm.es/roma#SLabel"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#ASustinabilityLabel"/>
     
 
 
     <!-- https://gsya.esi.uclm.es/roma#Adoption -->
 
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#Adoption">
-        <rdf:type rdf:resource="https://gsya.esi.uclm.es/roma#SControl"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#Adoption"/>
     
 
 
     <!-- https://gsya.esi.uclm.es/roma#BSustainabilityLabel -->
 
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#BSustainabilityLabel">
-        <rdf:type rdf:resource="https://gsya.esi.uclm.es/roma#SLabel"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#BSustainabilityLabel"/>
     
 
 
     <!-- https://gsya.esi.uclm.es/roma#CSustainabilityLabel -->
 
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#CSustainabilityLabel">
-        <rdf:type rdf:resource="https://gsya.esi.uclm.es/roma#SLabel"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#CSustainabilityLabel"/>
     
 
 
     <!-- https://gsya.esi.uclm.es/roma#DSustainabilityLabel -->
 
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#DSustainabilityLabel">
-        <rdf:type rdf:resource="https://gsya.esi.uclm.es/roma#SLabel"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#DSustainabilityLabel"/>
     
 
 
     <!-- https://gsya.esi.uclm.es/roma#ESustainabilityLabel -->
 
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#ESustainabilityLabel">
-        <rdf:type rdf:resource="https://gsya.esi.uclm.es/roma#SLabel"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#ESustainabilityLabel"/>
     
 
 
     <!-- https://gsya.esi.uclm.es/roma#Efficiency -->
 
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#Efficiency">
-        <rdf:type rdf:resource="https://gsya.esi.uclm.es/roma#SControl"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#Efficiency"/>
     
 
 
@@ -1091,17 +1430,13 @@
 
     <!-- https://gsya.esi.uclm.es/roma#Maintenance -->
 
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#Maintenance">
-        <rdf:type rdf:resource="https://gsya.esi.uclm.es/roma#SControl"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#Maintenance"/>
     
 
 
     <!-- https://gsya.esi.uclm.es/roma#Manufacture -->
 
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#Manufacture">
-        <rdf:type rdf:resource="https://gsya.esi.uclm.es/roma#SProduct"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#Manufacture"/>
     
 
 
@@ -1115,41 +1450,31 @@
 
     <!-- https://gsya.esi.uclm.es/roma#Packaging -->
 
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#Packaging">
-        <rdf:type rdf:resource="https://gsya.esi.uclm.es/roma#SProduct"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#Packaging"/>
     
 
 
     <!-- https://gsya.esi.uclm.es/roma#RawMaterial -->
 
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#RawMaterial">
-        <rdf:type rdf:resource="https://gsya.esi.uclm.es/roma#SProduct"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#RawMaterial"/>
     
 
 
     <!-- https://gsya.esi.uclm.es/roma#SpareParts -->
 
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#SpareParts">
-        <rdf:type rdf:resource="https://gsya.esi.uclm.es/roma#SProduct"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#SpareParts"/>
     
 
 
     <!-- https://gsya.esi.uclm.es/roma#Transport -->
 
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#Transport">
-        <rdf:type rdf:resource="https://gsya.esi.uclm.es/roma#SProduct"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#Transport"/>
     
 
 
     <!-- https://gsya.esi.uclm.es/roma#Usage -->
 
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#Usage">
-        <rdf:type rdf:resource="https://gsya.esi.uclm.es/roma#SProduct"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#Usage"/>
     
 
 
@@ -1166,6 +1491,12 @@
     <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#VeryLowPercentage">
         <rdf:type rdf:resource="https://gsya.esi.uclm.es/roma#Percentage"/>
     </owl:NamedIndividual>
+    <rdf:Description>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    </rdf:Description>
 </rdf:RDF>
 
 

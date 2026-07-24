@@ -125,6 +125,22 @@ For security mechanisms, EcoSec assesses key aspects such as adoption, maintenan
     
 
 
+    <!-- https://gsya.esi.uclm.es/ecosec#hasSustainabilityLabel -->
+
+    <ObjectProperty rdf:about="https://gsya.esi.uclm.es/ecosec#hasSustainabilityLabel">
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/ecosec/DeviceSustainability"/>
+                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/ecosec/SecurityMechanismSustainability"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+    </ObjectProperty>
+    
+
+
     <!-- https://gsya.esi.uclm.es/ecosec#hasTransportSustainabilityLabel -->
 
     <ObjectProperty rdf:about="https://gsya.esi.uclm.es/ecosec#hasTransportSustainabilityLabel">
@@ -181,116 +197,53 @@ For security mechanisms, EcoSec assesses key aspects such as adoption, maintenan
 
     <Class rdf:about="https://gsya.esi.uclm.es/ecosec/DeviceSustainability">
         <rdfs:subClassOf>
-            <Class>
-                <intersectionOf rdf:parseType="Collection">
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasEndOfLifeSustainabilityLabel"/>
-                        <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</minQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasEndOfLifeSustainabilityLabel"/>
-                        <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                </intersectionOf>
-            </Class>
+            <Restriction>
+                <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasEndOfLifeSustainabilityLabel"/>
+                <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
+                <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <Class>
-                <intersectionOf rdf:parseType="Collection">
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasManufactureSustainabilityLabel"/>
-                        <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</minQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasManufactureSustainabilityLabel"/>
-                        <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                </intersectionOf>
-            </Class>
+            <Restriction>
+                <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasManufactureSustainabilityLabel"/>
+                <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
+                <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <Class>
-                <intersectionOf rdf:parseType="Collection">
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasPackagingSustainabilityLabel"/>
-                        <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</minQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasPackagingSustainabilityLabel"/>
-                        <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                </intersectionOf>
-            </Class>
+            <Restriction>
+                <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasPackagingSustainabilityLabel"/>
+                <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
+                <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <Class>
-                <intersectionOf rdf:parseType="Collection">
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasRawMaterialSustainabilityLabel"/>
-                        <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</minQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasRawMaterialSustainabilityLabel"/>
-                        <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                </intersectionOf>
-            </Class>
+            <Restriction>
+                <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasRawMaterialSustainabilityLabel"/>
+                <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
+                <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <Class>
-                <intersectionOf rdf:parseType="Collection">
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasSparePartsSustainabilityLabel"/>
-                        <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</minQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasSparePartsSustainabilityLabel"/>
-                        <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                </intersectionOf>
-            </Class>
+            <Restriction>
+                <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasSparePartsSustainabilityLabel"/>
+                <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
+                <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <Class>
-                <intersectionOf rdf:parseType="Collection">
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasTransportSustainabilityLabel"/>
-                        <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</minQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasTransportSustainabilityLabel"/>
-                        <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                </intersectionOf>
-            </Class>
+            <Restriction>
+                <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasTransportSustainabilityLabel"/>
+                <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
+                <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <Class>
-                <intersectionOf rdf:parseType="Collection">
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasUsageSustainabilityLabel"/>
-                        <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</minQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasUsageSustainabilityLabel"/>
-                        <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                </intersectionOf>
-            </Class>
+            <Restriction>
+                <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasUsageSustainabilityLabel"/>
+                <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
+                <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </Restriction>
         </rdfs:subClassOf>
     </Class>
     
@@ -300,52 +253,25 @@ For security mechanisms, EcoSec assesses key aspects such as adoption, maintenan
 
     <Class rdf:about="https://gsya.esi.uclm.es/ecosec/SecurityMechanismSustainability">
         <rdfs:subClassOf>
-            <Class>
-                <intersectionOf rdf:parseType="Collection">
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasAdoptionSustainabilityLabel"/>
-                        <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</minQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasAdoptionSustainabilityLabel"/>
-                        <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                </intersectionOf>
-            </Class>
+            <Restriction>
+                <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasAdoptionSustainabilityLabel"/>
+                <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
+                <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <Class>
-                <intersectionOf rdf:parseType="Collection">
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasEfficiencySustainabilityLabel"/>
-                        <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</minQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasEfficiencySustainabilityLabel"/>
-                        <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                </intersectionOf>
-            </Class>
+            <Restriction>
+                <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasEfficiencySustainabilityLabel"/>
+                <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
+                <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <Class>
-                <intersectionOf rdf:parseType="Collection">
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasMaintenanceSustainabilityLabel"/>
-                        <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</minQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                    <Restriction>
-                        <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasMaintenanceSustainabilityLabel"/>
-                        <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
-                        <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
-                    </Restriction>
-                </intersectionOf>
-            </Class>
+            <Restriction>
+                <onProperty rdf:resource="https://gsya.esi.uclm.es/ecosec#hasMaintenanceSustainabilityLabel"/>
+                <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
+                <onClass rdf:resource="https://gsya.esi.uclm.es/ecosec/SustainabilityLabel"/>
+            </Restriction>
         </rdfs:subClassOf>
     </Class>
     
