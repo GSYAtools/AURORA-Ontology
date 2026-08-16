@@ -5,7 +5,8 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
     <owl:Ontology rdf:about="https://gsya.esi.uclm.es/aurora">
         <owl:imports rdf:resource="https://gsya.esi.uclm.es/roma"/>
     </owl:Ontology>
@@ -35,6 +36,15 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="https://gsya.esi.uclm.es/aurora#Alert"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/aurora#hasAlertStatus -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/aurora#hasAlertStatus">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/aurora#Alert"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/aurora#AlertStatus"/>
     </owl:ObjectProperty>
     
 
@@ -96,12 +106,25 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/aurora#hasAlertStatus"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/aurora#AlertStatus"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/roma#hasAsset"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="https://gsya.esi.uclm.es/roma#Asset"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/aurora#AlertStatus -->
+
+    <owl:Class rdf:about="https://gsya.esi.uclm.es/aurora#AlertStatus"/>
     
 
 
@@ -171,6 +194,33 @@
             </owl:Restriction>
         </rdfs:subClassOf>
     </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://gsya.esi.uclm.es/aurora#ActiveAlert -->
+
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/aurora#ActiveAlert">
+        <rdf:type rdf:resource="https://gsya.esi.uclm.es/aurora#AlertStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/aurora#ResolvedAlert -->
+
+    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/aurora#ResolvedAlert">
+        <rdf:type rdf:resource="https://gsya.esi.uclm.es/aurora#AlertStatus"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 

@@ -963,39 +963,9 @@
     
 
 
-    <!-- https://gsya.esi.uclm.es/roma#ASustinabilityLabel -->
-
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#ASustinabilityLabel"/>
-    
-
-
     <!-- https://gsya.esi.uclm.es/roma#Adoption -->
 
     <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#Adoption"/>
-    
-
-
-    <!-- https://gsya.esi.uclm.es/roma#BSustainabilityLabel -->
-
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#BSustainabilityLabel"/>
-    
-
-
-    <!-- https://gsya.esi.uclm.es/roma#CSustainabilityLabel -->
-
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#CSustainabilityLabel"/>
-    
-
-
-    <!-- https://gsya.esi.uclm.es/roma#DSustainabilityLabel -->
-
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#DSustainabilityLabel"/>
-    
-
-
-    <!-- https://gsya.esi.uclm.es/roma#ESustainabilityLabel -->
-
-    <owl:NamedIndividual rdf:about="https://gsya.esi.uclm.es/roma#ESustainabilityLabel"/>
     
 
 
