@@ -24,6 +24,15 @@
     
 
 
+    <!-- https://gsya.esi.uclm.es/aurora#collaboratesWith -->
+
+    <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/aurora#collaboratesWith">
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/aurora#LocalAurora"/>
+        <rdfs:range rdf:resource="https://gsya.esi.uclm.es/aurora#LocalAurora"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://gsya.esi.uclm.es/aurora#hasAlert -->
 
     <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/aurora#hasAlert">
@@ -61,14 +70,7 @@
     <!-- https://gsya.esi.uclm.es/aurora#hasLocal -->
 
     <owl:ObjectProperty rdf:about="https://gsya.esi.uclm.es/aurora#hasLocal">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/aurora#CentralAurora"/>
-                    <rdf:Description rdf:about="https://gsya.esi.uclm.es/aurora#LocalAurora"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/aurora#CentralAurora"/>
         <rdfs:range rdf:resource="https://gsya.esi.uclm.es/aurora#LocalAurora"/>
     </owl:ObjectProperty>
     
@@ -80,6 +82,44 @@
         <rdfs:domain rdf:resource="https://gsya.esi.uclm.es/aurora#LocalAurora"/>
         <rdfs:range rdf:resource="https://gsya.esi.uclm.es/roma#Risk"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://gsya.esi.uclm.es/aurora#controlType -->
+
+    <owl:DatatypeProperty rdf:about="https://gsya.esi.uclm.es/aurora#controlType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/aurora#trusted -->
+
+    <owl:DatatypeProperty rdf:about="https://gsya.esi.uclm.es/aurora#trusted">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gsya.esi.uclm.es/aurora#typeOfThread -->
+
+    <owl:DatatypeProperty rdf:about="https://gsya.esi.uclm.es/aurora#typeOfThread">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -160,6 +200,13 @@
     <owl:Class rdf:about="https://gsya.esi.uclm.es/aurora#LocalAurora">
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/aurora#collaboratesWith"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/aurora#LocalAurora"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/aurora#hasAlert"/>
                 <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
                 <owl:onClass rdf:resource="https://gsya.esi.uclm.es/aurora#Alert"/>
@@ -167,16 +214,16 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/aurora#hasLocal"/>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/aurora#hasRisk"/>
                 <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/aurora#LocalAurora"/>
+                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/roma#Risk"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/aurora#hasRisk"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://gsya.esi.uclm.es/roma#Risk"/>
+                <owl:onProperty rdf:resource="https://gsya.esi.uclm.es/aurora#trusted"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -225,5 +272,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 
