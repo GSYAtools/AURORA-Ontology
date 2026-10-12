@@ -53,3 +53,16 @@ AURORA
       ├── Trust Relationships
       ├── Alert Propagation
       └── Risk Reassessment
+```
+
+## Conceptual UML model
+
+Conceptual UML model of the AURORA ontology framework. The green, white, and pink areas identify the EcoSec sustainability module, the ROMA cybersecurity risk-management module, and the AURORA collaborative-awareness module, respectively. The relationships among the modules illustrate their semantic integration within the framework.
+
+![](AURORA/img/AURORA-model.png)
+
+## AURORA ontology
+
+Overview of the implemented AURORA ontology framework obtained using Protégé OntoGraf
+
+![](AURORA/img/AURORA-ontology.png)
