@@ -4,8 +4,14 @@
     <uri id="Imports Wizard Entry" name="https://gsya.esi.uclm.es/ecosec" uri="EcoSec.rdf"/>
     <uri id="Imports Wizard Entry" name="https://gsya.esi.uclm.es/roma" uri="ROMA.rdf"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+<<<<<<< Updated upstream
         <uri id="Automatically generated entry, Timestamp=1791837932776" name="http://www.semanticweb.org/lhc/ontologies/2023/3/untitled-ontology-34/" uri="ROMA.rdf"/>
         <uri id="Automatically generated entry, Timestamp=1791837932776" name="http://www.w3.org/2002/07/owl" uri="EcoSec.rdf"/>
         <uri id="Automatically generated entry, Timestamp=1791837932776" name="urn:absolute:26/6/untitled-ontology-82/" uri="AURORA.rdf"/>
+=======
+        <uri id="Automatically generated entry, Timestamp=1791937403693" name="http://www.semanticweb.org/lhc/ontologies/2023/3/untitled-ontology-34/" uri="ROMA.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1791937403693" name="http://www.w3.org/2002/07/owl" uri="EcoSec.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1791937403693" name="urn:absolute:26/6/untitled-ontology-82/" uri="AURORA.rdf"/>
+>>>>>>> Stashed changes
     </group>
 </catalog>

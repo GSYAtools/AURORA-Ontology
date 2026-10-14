@@ -634,28 +634,8 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 #    Individuals
 #################################################################
 
-###  https://gsya.esi.uclm.es/roma#ASustinabilityLabel
-:ASustinabilityLabel rdf:type owl:NamedIndividual .
-
-
 ###  https://gsya.esi.uclm.es/roma#Adoption
 :Adoption rdf:type owl:NamedIndividual .
-
-
-###  https://gsya.esi.uclm.es/roma#BSustainabilityLabel
-:BSustainabilityLabel rdf:type owl:NamedIndividual .
-
-
-###  https://gsya.esi.uclm.es/roma#CSustainabilityLabel
-:CSustainabilityLabel rdf:type owl:NamedIndividual .
-
-
-###  https://gsya.esi.uclm.es/roma#DSustainabilityLabel
-:DSustainabilityLabel rdf:type owl:NamedIndividual .
-
-
-###  https://gsya.esi.uclm.es/roma#ESustainabilityLabel
-:ESustainabilityLabel rdf:type owl:NamedIndividual .
 
 
 ###  https://gsya.esi.uclm.es/roma#Efficiency
