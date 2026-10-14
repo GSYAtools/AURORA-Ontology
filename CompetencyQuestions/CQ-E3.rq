@@ -1,0 +1,23 @@
+# CQ-E3
+# What sustainability assessments are associated with the adoption,
+# maintenance and operational efficiency of a given cybersecurity mechanism?
+#
+# Module: EcoSec
+
+SELECT ?control ?adoption ?maintenance ?efficiency
+WHERE {
+
+    ?control roma:hasSecurityMechanismSustainability ?sms .
+
+    OPTIONAL {
+        ?sms ecosec:hasAdoptionSustainabilityLabel ?adoption .
+    }
+
+    OPTIONAL {
+        ?sms ecosec:hasMaintenanceSustainabilityLabel ?maintenance .
+    }
+
+    OPTIONAL {
+        ?sms ecosec:hasEfficiencySustainabilityLabel ?efficiency .
+    }
+}

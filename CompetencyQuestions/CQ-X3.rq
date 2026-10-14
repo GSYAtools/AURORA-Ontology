@@ -1,0 +1,19 @@
+# CQ-X3
+# Which cybersecurity controls are applicable
+# to a risk affecting an alerted asset, and
+# what sustainability information is associated
+# with those controls?
+#
+# Cross-module
+
+SELECT ?control ?sustainability
+WHERE {
+
+    aurora:Alert_1 aurora:hasControl ?control .
+
+    OPTIONAL {
+        ?control
+            roma:hasSecurityMechanismSustainability
+            ?sustainability .
+    }
+}

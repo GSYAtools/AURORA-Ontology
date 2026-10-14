@@ -1,0 +1,15 @@
+# CQ-X4
+# Which risks associated with a collaborative entity
+# may be affected by an alert concerning the same asset?
+#
+# Cross-module
+
+SELECT DISTINCT ?risk
+WHERE {
+
+    ?local aurora:hasRisk ?risk .
+
+    ?risk roma:hasAsset ?asset .
+
+    aurora:Alert_1 aurora:hasAsset ?asset .
+}

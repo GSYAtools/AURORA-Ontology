@@ -1,0 +1,11 @@
+# CQ-A3
+# Which LocalAurora entities are associated
+# with a given CentralAurora entity?
+#
+# Module: AURORA
+
+SELECT ?local
+WHERE {
+    aurora:CentralAurora_1
+        aurora:hasLocal ?local .
+}

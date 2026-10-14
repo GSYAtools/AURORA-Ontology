@@ -1,0 +1,15 @@
+# CQ-R2
+# Which asset, threat and security dimension
+# are associated with a given risk?
+#
+# Module: ROMA
+
+SELECT ?asset ?threat ?dimension
+WHERE {
+    ?risk roma:name "Risk_1" .
+
+    ?risk roma:hasAsset ?asset .
+    ?risk roma:hasThreat ?threat .
+    ?risk roma:hasDimension ?dimension .
+}
+``

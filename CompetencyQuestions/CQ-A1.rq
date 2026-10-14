@@ -1,0 +1,9 @@
+# CQ-A1
+# Which asset is affected by a given cybersecurity alert?
+#
+# Module: AURORA
+
+SELECT ?asset
+WHERE {
+    aurora:Alert_1 aurora:hasAsset ?asset .
+}

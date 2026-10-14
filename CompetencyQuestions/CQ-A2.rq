@@ -1,0 +1,9 @@
+# CQ-A2
+# What is the current lifecycle status of a given alert?
+#
+# Module: AURORA
+
+SELECT ?status
+WHERE {
+    aurora:Alert_1 aurora:hasAlertStatus ?status .
+}

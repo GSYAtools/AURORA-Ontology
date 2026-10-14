@@ -1,0 +1,11 @@
+# CQ-A4
+# Which alerts are currently known by a given
+# CentralAurora or LocalAurora entity?
+#
+# Module: AURORA
+
+SELECT ?alert
+WHERE {
+    aurora:CentralAurora_1
+        aurora:hasAlert ?alert .
+}

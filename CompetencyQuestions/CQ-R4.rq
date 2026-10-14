@@ -1,0 +1,16 @@
+# CQ-R4
+# Which controls are associated with a given risk
+# and which threats can they mitigate?
+#
+# Module: ROMA
+
+SELECT ?control ?threatType
+WHERE {
+
+    ?risk roma:name "Risk_1" .
+    ?risk roma:hasControl ?control .
+
+    OPTIONAL {
+        ?control roma:mitigates ?threatType .
+    }
+}

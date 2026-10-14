@@ -1,0 +1,10 @@
+# CQ-A5
+# Which risks are associated with a given
+# LocalAurora entity?
+#
+# Module: AURORA
+
+SELECT ?risk
+WHERE {
+    aurora:LocalAurora_A
+}

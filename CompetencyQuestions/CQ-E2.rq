@@ -1,0 +1,49 @@
+# CQ-E2
+# Which lifecycle dimensions of a technological device present
+# the least favourable sustainability assessments?
+#
+# Module: EcoSec
+
+SELECT ?dimension ?label
+WHERE {
+    ?typeAsset roma:hasAsset ?asset .
+    ?asset roma:name "SmartMeter_1" .
+    ?typeAsset roma:hasDeviceSustainability ?ds .
+
+    {
+        ?ds ecosec:hasRawMaterialSustainabilityLabel ?label .
+        BIND("RawMaterial" AS ?dimension)
+    }
+    UNION
+    {
+        ?ds ecosec:hasManufactureSustainabilityLabel ?label .
+        BIND("Manufacture" AS ?dimension)
+    }
+    UNION
+    {
+        ?ds ecosec:hasPackagingSustainabilityLabel ?label .
+        BIND("Packaging" AS ?dimension)
+    }
+    UNION
+    {
+        ?ds ecosec:hasTransportSustainabilityLabel ?label .
+        BIND("Transport" AS ?dimension)
+    }
+    UNION
+    {
+        ?ds ecosec:hasUsageSustainabilityLabel ?label .
+        BIND("Usage" AS ?dimension)
+    }
+    UNION
+    {
+        ?ds ecosec:hasSparePartsSustainabilityLabel ?label .
+        BIND("SpareParts" AS ?dimension)
+    }
+    UNION
+    {
+        ?ds ecosec:hasEndOfLifeSustainabilityLabel ?label .
+        BIND("EndOfLife" AS ?dimension)
+    }
+
+    FILTER(?label = ecosec:ELabel)
+}

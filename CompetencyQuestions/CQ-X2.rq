@@ -1,0 +1,17 @@
+# CQ-X2
+# What sustainability information is associated
+# with the technological asset affected by a given alert?
+#
+# Cross-module
+
+SELECT ?label
+WHERE {
+
+    aurora:Alert_1 aurora:hasAsset ?asset .
+
+    ?typeAsset roma:hasAsset ?asset .
+
+    ?typeAsset roma:hasDeviceSustainability ?ds .
+
+    ?ds ecosec:hasUsageSustainabilityLabel
+}

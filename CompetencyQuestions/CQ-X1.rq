@@ -1,0 +1,16 @@
+# CQ-X1
+# Which collaborative entities are potentially affected
+# by a given cybersecurity alert according to the
+# assets and risks they manage?
+#
+# Cross-module
+
+SELECT DISTINCT ?local
+WHERE {
+
+    ?local aurora:hasRisk ?risk .
+
+    ?risk roma:hasAsset ?asset .
+
+    aurora:Alert_1 aurora:hasAsset ?asset .
+}

@@ -1,0 +1,11 @@
+# CQ-A6
+# Which LocalAurora entities are connected
+# through collaborative relationships and
+# can therefore participate in alert sharing?
+#
+# Module: AURORA
+
+SELECT ?local ?collaborator
+WHERE {
+    ?local aurora:collaboratesWith ?collaborator .
+}

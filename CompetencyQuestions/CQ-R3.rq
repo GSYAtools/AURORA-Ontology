@@ -1,0 +1,11 @@
+# CQ-R3
+# What is the current risk level associated
+# with a given risk?
+#
+# Module: ROMA
+
+SELECT ?riskLevel
+WHERE {
+    ?risk roma:name "Risk_1" .
+    ?risk roma:hasRiskLevel ?riskLevel .
+}

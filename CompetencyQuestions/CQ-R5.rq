@@ -1,0 +1,14 @@
+# CQ-R5
+# Which security characteristics are associated
+# with a given control?
+#
+# Module: ROMA
+
+SELECT ?securityCharacteristic
+WHERE {
+
+    ?control roma:name "MultiFactorAuthentication" .
+
+    ?control roma:hasSecurityCharacteristic
+             ?securityCharacteristic .
+}

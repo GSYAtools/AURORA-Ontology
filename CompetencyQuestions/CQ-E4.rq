@@ -1,0 +1,10 @@
+# CQ-E4
+# How do two sustainability labels compare in terms
+# of their sustainability level?
+#
+# Module: EcoSec
+
+SELECT ?label1 ?label2
+WHERE {
+    ?label1 ecosec:isMoreSustainableThan ?label2 .
+}

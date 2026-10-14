@@ -1,0 +1,10 @@
+# CQ-R1
+# Which risks are associated with a given asset?
+#
+# Module: ROMA
+
+SELECT ?risk
+WHERE {
+    ?asset roma:name "SmartMeter_1" .
+    ?risk roma:hasAsset ?asset .
+}
