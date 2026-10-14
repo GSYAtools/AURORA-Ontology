@@ -39873,17 +39873,17 @@
 											},
 											"font": "Arial;13;0",
 											"parentStyle": false,
-											"left": 272,
-											"top": 452,
-											"width": 52.0380859375,
+											"left": 250,
+											"top": 463,
+											"width": 96.09716796875,
 											"height": 13,
-											"alpha": -1.0189781054473959,
-											"distance": 19.313207915827967,
+											"alpha": -1.267061506063916,
+											"distance": 29.154759474226502,
 											"hostEdge": {
 												"$ref": "AAAAAAGfnbfNcSYUNQU="
 											},
 											"edgePosition": 1,
-											"text": "hasLocal"
+											"text": "collaboratesWith"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -43099,7 +43099,7 @@
 											"_parent": {
 												"$ref": "AAAAAAGfnbfNcSYTMsQ="
 											},
-											"name": "hasLocal"
+											"name": "collaboratesWith"
 										}
 									]
 								},
@@ -45431,17 +45431,17 @@
 											},
 											"font": "Arial;13;0",
 											"parentStyle": false,
-											"left": 308,
-											"top": 443,
-											"width": 52.0380859375,
+											"left": 296,
+											"top": 408,
+											"width": 96.09716796875,
 											"height": 13,
-											"alpha": -1.0189781054473959,
-											"distance": 19.313207915827967,
+											"alpha": 0.9906703527661365,
+											"distance": 24.758836806279895,
 											"hostEdge": {
 												"$ref": "AAAAAAGfncvgfPnADjo="
 											},
 											"edgePosition": 1,
-											"text": "hasLocal"
+											"text": "collaboratesWith"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -46250,7 +46250,7 @@
 											"_parent": {
 												"$ref": "AAAAAAGfncvgffpnZSI="
 											},
-											"name": "hasLocal"
+											"name": "collaboratesWith"
 										}
 									]
 								},
@@ -48116,17 +48116,17 @@
 											},
 											"font": "Arial;13;0",
 											"parentStyle": false,
-											"left": 257,
-											"top": 471,
-											"width": 52.0380859375,
+											"left": 200,
+											"top": 480,
+											"width": 96.09716796875,
 											"height": 13,
-											"alpha": -1.0189781054473959,
-											"distance": 19.313207915827967,
+											"alpha": -2.2919187822606575,
+											"distance": 37.48332962798263,
 											"hostEdge": {
 												"$ref": "AAAAAAGfndhI3QC1Iuo="
 											},
 											"edgePosition": 1,
-											"text": "hasLocal"
+											"text": "collaboratesWith"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -48836,7 +48836,7 @@
 											"_parent": {
 												"$ref": "AAAAAAGfndhI3gFcNHA="
 											},
-											"name": "hasLocal"
+											"name": "collaboratesWith"
 										}
 									]
 								},
@@ -50773,17 +50773,17 @@
 											"fontColor": "#00A9FF",
 											"font": "Arial;13;0",
 											"parentStyle": false,
-											"left": 248,
-											"top": 462,
-											"width": 52.0380859375,
+											"left": 208,
+											"top": 480,
+											"width": 96.09716796875,
 											"height": 13,
-											"alpha": -1.6332145142227363,
-											"distance": 16.0312195418814,
+											"alpha": -2.0803883674772288,
+											"distance": 38.948684188300895,
 											"hostEdge": {
 												"$ref": "AAAAAAGfnedoKy3/tOU="
 											},
 											"edgePosition": 1,
-											"text": "hasLocal"
+											"text": "collaboratesWith"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -51183,12 +51183,12 @@
 											"fontColor": "#FF38FF",
 											"font": "Arial;13;0",
 											"parentStyle": false,
-											"left": 304,
-											"top": 493,
+											"left": 231,
+											"top": 511,
 											"width": 47.68994140625,
 											"height": 13,
-											"alpha": -0.6355454365789828,
-											"distance": 34.48187929913333,
+											"alpha": -0.22121888137326007,
+											"distance": 105.17128885774862,
 											"hostEdge": {
 												"$ref": "AAAAAAGfnehywS/0DsE="
 											},
@@ -51591,7 +51591,7 @@
 											"_parent": {
 												"$ref": "AAAAAAGfnedoKy4uuHA="
 											},
-											"name": "hasLocal"
+											"name": "collaboratesWith"
 										}
 									]
 								},
